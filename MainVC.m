@@ -35,6 +35,10 @@
         case 3:
             identifier = @"Radio";
             break;
+        case 4:
+            identifier = @"settings";
+            break;
+            
         default:
             break;
     }
