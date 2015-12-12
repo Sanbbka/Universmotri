@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
 }
 
 - (NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath {
@@ -43,6 +42,7 @@
         default:
             break;
     }
+    
     return identifier;
 }
 
