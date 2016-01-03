@@ -27,6 +27,8 @@
 		2BF87DED1C14227600D3F4FB /* icon-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DEB1C14227600D3F4FB /* icon-menu@2x.png */; };
 		2BF87DEF1C142C3900D3F4FB /* u255-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DEE1C142C3900D3F4FB /* u255-m.png */; };
 		2BF87DF11C142CD000D3F4FB /* universmotri.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DF01C142CD000D3F4FB /* universmotri.png */; };
+		2BFEF9101C3962850069EB88 /* KFUSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFEF90F1C3962850069EB88 /* KFUSettings.m */; };
+		85FA2D5F9D1787D59B172CFC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5C9AD4ABF46096AFA91A67 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,11 @@
 		2BF87DEB1C14227600D3F4FB /* icon-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu@2x.png"; sourceTree = "<group>"; };
 		2BF87DEE1C142C3900D3F4FB /* u255-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "u255-m.png"; sourceTree = "<group>"; };
 		2BF87DF01C142CD000D3F4FB /* universmotri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = universmotri.png; sourceTree = "<group>"; };
+		2BFEF90E1C3962850069EB88 /* KFUSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUSettings.h; sourceTree = "<group>"; };
+		2BFEF90F1C3962850069EB88 /* KFUSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUSettings.m; sourceTree = "<group>"; };
+		6BB4D83384245498F45295A5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8B721CBBF4A5CD1F9FF367F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CB5C9AD4ABF46096AFA91A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FA2D5F9D1787D59B172CFC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +126,8 @@
 				2B059AA81C01F1F900770818 /* UniversmotriTests */,
 				2B059AB31C01F1F900770818 /* UniversmotriUITests */,
 				2B059A8D1C01F1F900770818 /* Products */,
+				65F7315BBCFC9B109CC18B44 /* Pods */,
+				2D391AE390A46DE8AD0D9156 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,17 +144,9 @@
 		2B059A8E1C01F1F900770818 /* Universmotri */ = {
 			isa = PBXGroup;
 			children = (
-				2BF87DD01C14192000D3F4FB /* AMSlideMenu */,
-				2B059A921C01F1F900770818 /* AppDelegate.h */,
-				2B059A931C01F1F900770818 /* AppDelegate.m */,
-				2BF87DE71C14197D00D3F4FB /* MainVC.h */,
-				2BF87DE81C14197D00D3F4FB /* MainVC.m */,
-				2BF31A1D1C14376A00FD4EFE /* KFUStreamViewController.h */,
-				2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */,
-				2B059A981C01F1F900770818 /* Main.storyboard */,
-				2B059A9B1C01F1F900770818 /* Assets.xcassets */,
-				2B059A9D1C01F1F900770818 /* LaunchScreen.storyboard */,
-				2B059AA01C01F1F900770818 /* Info.plist */,
+				2BFEF9121C3965180069EB88 /* Model */,
+				2BFEF9131C3965270069EB88 /* View */,
+				2BFEF9141C3965340069EB88 /* Controller */,
 				2B059A8F1C01F1F900770818 /* Supporting Files */,
 			);
 			path = Universmotri;
@@ -153,10 +155,10 @@
 		2B059A8F1C01F1F900770818 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2BF87DF01C142CD000D3F4FB /* universmotri.png */,
-				2BF87DEA1C14227600D3F4FB /* icon-menu.png */,
-				2BF87DEB1C14227600D3F4FB /* icon-menu@2x.png */,
-				2BF87DEE1C142C3900D3F4FB /* u255-m.png */,
+				2BFEF8951C3926C60069EB88 /* Frameworks */,
+				2BFEF9151C3965AA0069EB88 /* Images */,
+				2B059A9B1C01F1F900770818 /* Assets.xcassets */,
+				2B059AA01C01F1F900770818 /* Info.plist */,
 				2B059A901C01F1F900770818 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -202,6 +204,81 @@
 			path = AMSlideMenu;
 			sourceTree = "<group>";
 		};
+		2BFEF8951C3926C60069EB88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BF87DD01C14192000D3F4FB /* AMSlideMenu */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BFEF9111C3964FD0069EB88 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2BFEF90E1C3962850069EB88 /* KFUSettings.h */,
+				2BFEF90F1C3962850069EB88 /* KFUSettings.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		2BFEF9121C3965180069EB88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BFEF9111C3964FD0069EB88 /* Settings */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2BFEF9131C3965270069EB88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B059A981C01F1F900770818 /* Main.storyboard */,
+				2B059A9D1C01F1F900770818 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2BFEF9141C3965340069EB88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2B059A921C01F1F900770818 /* AppDelegate.h */,
+				2B059A931C01F1F900770818 /* AppDelegate.m */,
+				2BF87DE71C14197D00D3F4FB /* MainVC.h */,
+				2BF87DE81C14197D00D3F4FB /* MainVC.m */,
+				2BF31A1D1C14376A00FD4EFE /* KFUStreamViewController.h */,
+				2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2BFEF9151C3965AA0069EB88 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2BF87DF01C142CD000D3F4FB /* universmotri.png */,
+				2BF87DEA1C14227600D3F4FB /* icon-menu.png */,
+				2BF87DEB1C14227600D3F4FB /* icon-menu@2x.png */,
+				2BF87DEE1C142C3900D3F4FB /* u255-m.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		2D391AE390A46DE8AD0D9156 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C9AD4ABF46096AFA91A67 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65F7315BBCFC9B109CC18B44 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BB4D83384245498F45295A5 /* Pods.debug.xcconfig */,
+				8B721CBBF4A5CD1F9FF367F2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,9 +286,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B059AB91C01F1F900770818 /* Build configuration list for PBXNativeTarget "Universmotri" */;
 			buildPhases = (
+				21285F048E5D1AF5D04C44C2 /* Check Pods Manifest.lock */,
 				2B059A881C01F1F900770818 /* Sources */,
 				2B059A891C01F1F900770818 /* Frameworks */,
 				2B059A8A1C01F1F900770818 /* Resources */,
+				A2D06099EC8CF8F7A0A1178C /* Embed Pods Frameworks */,
+				F906311FD93167E2E18C3965 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,6 +411,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21285F048E5D1AF5D04C44C2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2D06099EC8CF8F7A0A1178C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F906311FD93167E2E18C3965 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B059A881C01F1F900770818 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -343,6 +471,7 @@
 				2BF87DE61C14192000D3F4FB /* UIViewController+AMSlideMenu.m in Sources */,
 				2BF87DE21C14192000D3F4FB /* AMSlideMenuLeftTableViewController.m in Sources */,
 				2B059A941C01F1F900770818 /* AppDelegate.m in Sources */,
+				2BFEF9101C3962850069EB88 /* KFUSettings.m in Sources */,
 				2BF87DE31C14192000D3F4FB /* AMSlideMenuMainViewController.m in Sources */,
 				2BF87DE41C14192000D3F4FB /* AMSlideMenuRightMenuSegue.m in Sources */,
 				2BF31A1F1C14376A00FD4EFE /* KFUStreamViewController.m in Sources */,
@@ -483,6 +612,7 @@
 		};
 		2B059ABA1C01F1F900770818 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BB4D83384245498F45295A5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Universmotri/Info.plist;
@@ -494,6 +624,7 @@
 		};
 		2B059ABB1C01F1F900770818 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B721CBBF4A5CD1F9FF367F2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Universmotri/Info.plist;

@@ -58,10 +58,10 @@ HTMLSelectorPredicateGen neverPredicate(void)
 
 #pragma mark - Combinators
 
-HTMLSelectorPredicateGen bothCombinatorPredicate(__nullable HTMLSelectorPredicate a, __nullable HTMLSelectorPredicate b)
+__nullable HTMLSelectorPredicateGen bothCombinatorPredicate(__nullable HTMLSelectorPredicate a, __nullable HTMLSelectorPredicate b)
 {
-	// There was probably an error somewhere else in parsing, so return a block that always returns NO
-    if (!a || !b) return ^(HTMLElement *_) { return NO; };
+	// There was probably an error somewhere else in parsing, so return nil here
+	if (!a || !b) return nil;
 	
 	return ^BOOL(HTMLElement *node) {
 		return a(node) && b(node);
@@ -105,23 +105,18 @@ HTMLSelectorPredicateGen isTagTypePredicate(NSString *tagType)
 	}
 }
 
-HTMLSelectorPredicateGen childOfOtherPredicatePredicate(HTMLSelectorPredicate parentPredicate)
+__nullable HTMLSelectorPredicateGen childOfOtherPredicatePredicate(HTMLSelectorPredicate parentPredicate)
 {
-    static HTMLSelectorPredicateGen const AlwaysNo = ^(HTMLElement *_) { return NO; };
-    if (!parentPredicate) return AlwaysNo;
+	if (!parentPredicate) return nil;
 	
 	return ^(HTMLElement *element) {
-        BOOL predicateResult = NO;
-        if (element.parentElement) {
-            predicateResult = parentPredicate((HTMLElement * __nonnull)element.parentElement);
-        }
-        return predicateResult;
+		return parentPredicate(element.parentElement);
 	};
 }
 
-HTMLSelectorPredicateGen descendantOfPredicate(__nullable HTMLSelectorPredicate parentPredicate)
+__nullable HTMLSelectorPredicateGen descendantOfPredicate(__nullable HTMLSelectorPredicate parentPredicate)
 {
-    if (!parentPredicate) return ^(HTMLElement *_) { return NO; };
+	if (!parentPredicate) return nil;
 	
 	return ^(HTMLElement *element) {
 		HTMLElement *parent = element.parentElement;
@@ -311,12 +306,12 @@ HTMLSelectorPredicateGen isLastChildPredicate(void)
 	return isNthChildPredicate(HTMLNthExpressionMake(0, 1), YES);
 }
 
-__nullable HTMLSelectorPredicateGen isFirstChildOfTypePredicate(HTMLSelectorPredicate typePredicate)
+HTMLSelectorPredicateGen isFirstChildOfTypePredicate(HTMLSelectorPredicate typePredicate)
 {
 	return isNthChildOfTypePredicate(HTMLNthExpressionMake(0, 1), typePredicate, NO);
 }
 
-__nullable HTMLSelectorPredicateGen isLastChildOfTypePredicate(HTMLSelectorPredicate typePredicate)
+HTMLSelectorPredicateGen isLastChildOfTypePredicate(HTMLSelectorPredicate typePredicate)
 {
 	return isNthChildOfTypePredicate(HTMLNthExpressionMake(0, 1), typePredicate, YES);
 }

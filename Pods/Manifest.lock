@@ -1,0 +1,10 @@
+PODS:
+  - HTMLReader (0.9.3)
+
+DEPENDENCIES:
+  - HTMLReader
+
+SPEC CHECKSUMS:
+  HTMLReader: 01de6ebb3b5f0f9dc4f6f165fdac0a15b3648167
+
+COCOAPODS: 0.39.0

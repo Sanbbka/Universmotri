@@ -28,10 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (ObjectType)objectAtIndexedSubscript:(NSUInteger)index;
 
 /// Returns the key at index 0 in the dictionary, or nil if the dictionary is empty.
-@property (readonly, nonatomic) KeyType __nullable firstKey;
+@property (readonly, nonatomic) KeyType firstKey;
 
 /// Returns the key at index (count - 1) in the dictionary, or nil if the dictionary is empty.
-@property (readonly, nonatomic) KeyType __nullable lastKey;
+@property (readonly, nonatomic) KeyType lastKey;
 
 @end
 

@@ -20,9 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
     if ((self = [super init])) {
         _tagName = [tagName copy];
         _attributes = [HTMLOrderedDictionary new];
-        if (attributes) {
-            [_attributes addEntriesFromDictionary:(NSDictionary * __nonnull)attributes];
-        }
+        [_attributes addEntriesFromDictionary:attributes];
     }
     return self;
 }

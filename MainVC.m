@@ -9,7 +9,9 @@
 #import "MainVC.h"
 
 @interface MainVC ()
-
+{
+    UIWebView *view;
+}
 @end
 
 @implementation MainVC
@@ -18,6 +20,7 @@
     [super viewDidLoad];
     
 }
+
 
 - (NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath {
     

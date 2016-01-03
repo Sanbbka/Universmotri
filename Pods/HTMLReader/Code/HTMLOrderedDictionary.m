@@ -111,12 +111,12 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (__nullable KeyType)firstKey
+- (KeyType)firstKey
 {
     return _keys.firstObject;
 }
 
-- (__nullable KeyType)lastKey
+- (KeyType)lastKey
 {
     return _keys.lastObject;
 }

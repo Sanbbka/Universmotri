@@ -10,4 +10,11 @@
 
 @interface KFUStreamViewController : UIViewController
 
+typedef NS_ENUM(NSInteger, Stream) {
+    StreamKFU,
+    StreamUniversmotri
+};
+
+
+
 @end

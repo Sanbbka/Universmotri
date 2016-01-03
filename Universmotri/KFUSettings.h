@@ -10,4 +10,6 @@
 
 @interface KFUSettings : NSObject
 
++ (instancetype)sharedManager;
+
 @end
