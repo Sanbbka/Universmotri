@@ -7,6 +7,11 @@
 //
 
 #import "KFUSettings.h"
+@interface KFUSettings()
+
+
+
+@end
 
 @implementation KFUSettings
 

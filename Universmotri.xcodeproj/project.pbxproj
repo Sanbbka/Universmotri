@@ -14,6 +14,9 @@
 		2B059A9F1C01F1F900770818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B059A9D1C01F1F900770818 /* LaunchScreen.storyboard */; };
 		2B059AAA1C01F1F900770818 /* UniversmotriTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B059AA91C01F1F900770818 /* UniversmotriTests.m */; };
 		2B059AB51C01F1F900770818 /* UniversmotriUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B059AB41C01F1F900770818 /* UniversmotriUITests.m */; };
+		2B0D47BB1C3A79A90076F425 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47BA1C3A79A90076F425 /* NewsTableViewCell.m */; };
+		2B0D47BE1C3A7AA60076F425 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47BD1C3A7AA60076F425 /* NewsTableViewController.m */; };
+		2B0D47C21C3A7FA80076F425 /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47C01C3A7FA80076F425 /* ItemModel.xcdatamodeld */; };
 		2BF31A1F1C14376A00FD4EFE /* KFUStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */; };
 		2BF87DE01C14192000D3F4FB /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF87DD21C14192000D3F4FB /* AMSlideMenuContentSegue.m */; };
 		2BF87DE11C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF87DD41C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m */; };
@@ -63,6 +66,11 @@
 		2B059AB01C01F1F900770818 /* UniversmotriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversmotriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B059AB41C01F1F900770818 /* UniversmotriUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UniversmotriUITests.m; sourceTree = "<group>"; };
 		2B059AB61C01F1F900770818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B0D47B91C3A79A90076F425 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		2B0D47BA1C3A79A90076F425 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		2B0D47BC1C3A7AA60076F425 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
+		2B0D47BD1C3A7AA60076F425 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		2B0D47C11C3A7FA80076F425 /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
 		2BF31A1D1C14376A00FD4EFE /* KFUStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUStreamViewController.h; sourceTree = "<group>"; };
 		2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUStreamViewController.m; sourceTree = "<group>"; };
 		2BF87DD11C14192000D3F4FB /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
@@ -88,6 +96,7 @@
 		2BF87DF01C142CD000D3F4FB /* universmotri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = universmotri.png; sourceTree = "<group>"; };
 		2BFEF90E1C3962850069EB88 /* KFUSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUSettings.h; sourceTree = "<group>"; };
 		2BFEF90F1C3962850069EB88 /* KFUSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUSettings.m; sourceTree = "<group>"; };
+		2BFEF9161C39A8360069EB88 /* KFUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUConstants.h; sourceTree = "<group>"; };
 		6BB4D83384245498F45295A5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8B721CBBF4A5CD1F9FF367F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CB5C9AD4ABF46096AFA91A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +191,14 @@
 			path = UniversmotriUITests;
 			sourceTree = "<group>";
 		};
+		2B0D47BF1C3A7F8D0076F425 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				2B0D47C01C3A7FA80076F425 /* ItemModel.xcdatamodeld */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
 		2BF87DD01C14192000D3F4FB /* AMSlideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +234,7 @@
 			children = (
 				2BFEF90E1C3962850069EB88 /* KFUSettings.h */,
 				2BFEF90F1C3962850069EB88 /* KFUSettings.m */,
+				2BFEF9161C39A8360069EB88 /* KFUConstants.h */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -224,6 +242,7 @@
 		2BFEF9121C3965180069EB88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B0D47BF1C3A7F8D0076F425 /* DB */,
 				2BFEF9111C3964FD0069EB88 /* Settings */,
 			);
 			name = Model;
@@ -233,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				2B059A981C01F1F900770818 /* Main.storyboard */,
+				2B0D47B91C3A79A90076F425 /* NewsTableViewCell.h */,
+				2B0D47BA1C3A79A90076F425 /* NewsTableViewCell.m */,
 				2B059A9D1C01F1F900770818 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -247,6 +268,8 @@
 				2BF87DE81C14197D00D3F4FB /* MainVC.m */,
 				2BF31A1D1C14376A00FD4EFE /* KFUStreamViewController.h */,
 				2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */,
+				2B0D47BC1C3A7AA60076F425 /* NewsTableViewController.h */,
+				2B0D47BD1C3A7AA60076F425 /* NewsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -466,6 +489,7 @@
 			files = (
 				2BF87DE11C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				2BF87DE51C14192000D3F4FB /* AMSlideMenuRightTableViewController.m in Sources */,
+				2B0D47BE1C3A7AA60076F425 /* NewsTableViewController.m in Sources */,
 				2BF87DE01C14192000D3F4FB /* AMSlideMenuContentSegue.m in Sources */,
 				2BF87DE91C14197D00D3F4FB /* MainVC.m in Sources */,
 				2BF87DE61C14192000D3F4FB /* UIViewController+AMSlideMenu.m in Sources */,
@@ -475,6 +499,8 @@
 				2BF87DE31C14192000D3F4FB /* AMSlideMenuMainViewController.m in Sources */,
 				2BF87DE41C14192000D3F4FB /* AMSlideMenuRightMenuSegue.m in Sources */,
 				2BF31A1F1C14376A00FD4EFE /* KFUStreamViewController.m in Sources */,
+				2B0D47C21C3A7FA80076F425 /* ItemModel.xcdatamodeld in Sources */,
+				2B0D47BB1C3A79A90076F425 /* NewsTableViewCell.m in Sources */,
 				2B059A911C01F1F900770818 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,6 +748,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2B0D47C01C3A7FA80076F425 /* ItemModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2B0D47C11C3A7FA80076F425 /* ItemModel.xcdatamodel */,
+			);
+			currentVersion = 2B0D47C11C3A7FA80076F425 /* ItemModel.xcdatamodel */;
+			path = ItemModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2B059A841C01F1F900770818 /* Project object */;
 }

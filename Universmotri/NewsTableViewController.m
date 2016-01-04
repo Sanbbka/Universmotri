@@ -8,6 +8,14 @@
 
 #import "NewsTableViewController.h"
 
+@interface NewsTableViewController()
+
+@end
+
 @implementation NewsTableViewController
+
+
+
+
 
 @end

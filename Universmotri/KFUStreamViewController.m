@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIWebView *streamWebView;
 @property (weak, nonatomic) IBOutlet UITableView *scheduleTableView;
 
+@property (strong , nonatomic) NSArray *arrProgram;
+
 @property (assign, nonatomic) Stream stream;
 
 @end
@@ -25,11 +27,24 @@
     self.stream = [self.navigationItem.title rangeOfString:@"KFU"].length > 0 ? StreamKFU : StreamUniversmotri;
 }
 
+-(void)updateInfo {
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        self.arrProgram = [self getSchedule];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.scheduleTableView reloadData];
+        });
+    });
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self KFUStream];
     
+    self.arrProgram = [NSArray new];
     NSString *urlString;
     
     switch (self.stream) {
@@ -50,11 +65,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-
+    [self updateInfo];
 }
 
 
-#pragma mark - online 
+#pragma mark - online
 - (NSArray *)getSchedule {
     
     NSString *urlStream;
@@ -83,12 +98,18 @@
 #pragma mark - table delegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return [[UITableViewCell alloc] init];
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    
+    if (indexPath.row < self.arrProgram.count) {
+        cell.textLabel.text = self.arrProgram[indexPath.row];
+    }
+    
+    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return self.arrProgram.count;
 }
 
 @end
