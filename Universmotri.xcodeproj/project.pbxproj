@@ -17,6 +17,8 @@
 		2B0D47BB1C3A79A90076F425 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47BA1C3A79A90076F425 /* NewsTableViewCell.m */; };
 		2B0D47BE1C3A7AA60076F425 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47BD1C3A7AA60076F425 /* NewsTableViewController.m */; };
 		2B0D47C21C3A7FA80076F425 /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47C01C3A7FA80076F425 /* ItemModel.xcdatamodeld */; };
+		2B0D47C61C3A89B50076F425 /* Menu-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D47C51C3A89B50076F425 /* Menu-50@2x.png */; };
+		2B0D47C81C3A89EE0076F425 /* Menu-52@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D47C71C3A89EE0076F425 /* Menu-52@2x.png */; };
 		2BF31A1F1C14376A00FD4EFE /* KFUStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */; };
 		2BF87DE01C14192000D3F4FB /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF87DD21C14192000D3F4FB /* AMSlideMenuContentSegue.m */; };
 		2BF87DE11C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF87DD41C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m */; };
@@ -29,7 +31,7 @@
 		2BF87DEC1C14227600D3F4FB /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DEA1C14227600D3F4FB /* icon-menu.png */; };
 		2BF87DED1C14227600D3F4FB /* icon-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DEB1C14227600D3F4FB /* icon-menu@2x.png */; };
 		2BF87DEF1C142C3900D3F4FB /* u255-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DEE1C142C3900D3F4FB /* u255-m.png */; };
-		2BF87DF11C142CD000D3F4FB /* universmotri.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DF01C142CD000D3F4FB /* universmotri.png */; };
+		2BF87DF11C142CD000D3F4FB /* universmotri@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF87DF01C142CD000D3F4FB /* universmotri@2x.png */; };
 		2BFEF9101C3962850069EB88 /* KFUSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFEF90F1C3962850069EB88 /* KFUSettings.m */; };
 		85FA2D5F9D1787D59B172CFC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5C9AD4ABF46096AFA91A67 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		2B0D47BC1C3A7AA60076F425 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		2B0D47BD1C3A7AA60076F425 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
 		2B0D47C11C3A7FA80076F425 /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
+		2B0D47C51C3A89B50076F425 /* Menu-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-50@2x.png"; sourceTree = "<group>"; };
+		2B0D47C71C3A89EE0076F425 /* Menu-52@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-52@2x.png"; sourceTree = "<group>"; };
 		2BF31A1D1C14376A00FD4EFE /* KFUStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUStreamViewController.h; sourceTree = "<group>"; };
 		2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUStreamViewController.m; sourceTree = "<group>"; };
 		2BF87DD11C14192000D3F4FB /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
@@ -93,7 +97,7 @@
 		2BF87DEA1C14227600D3F4FB /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu.png"; sourceTree = "<group>"; };
 		2BF87DEB1C14227600D3F4FB /* icon-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu@2x.png"; sourceTree = "<group>"; };
 		2BF87DEE1C142C3900D3F4FB /* u255-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "u255-m.png"; sourceTree = "<group>"; };
-		2BF87DF01C142CD000D3F4FB /* universmotri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = universmotri.png; sourceTree = "<group>"; };
+		2BF87DF01C142CD000D3F4FB /* universmotri@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "universmotri@2x.png"; sourceTree = "<group>"; };
 		2BFEF90E1C3962850069EB88 /* KFUSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUSettings.h; sourceTree = "<group>"; };
 		2BFEF90F1C3962850069EB88 /* KFUSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUSettings.m; sourceTree = "<group>"; };
 		2BFEF9161C39A8360069EB88 /* KFUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUConstants.h; sourceTree = "<group>"; };
@@ -277,7 +281,9 @@
 		2BFEF9151C3965AA0069EB88 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				2BF87DF01C142CD000D3F4FB /* universmotri.png */,
+				2B0D47C71C3A89EE0076F425 /* Menu-52@2x.png */,
+				2BF87DF01C142CD000D3F4FB /* universmotri@2x.png */,
+				2B0D47C51C3A89B50076F425 /* Menu-50@2x.png */,
 				2BF87DEA1C14227600D3F4FB /* icon-menu.png */,
 				2BF87DEB1C14227600D3F4FB /* icon-menu@2x.png */,
 				2BF87DEE1C142C3900D3F4FB /* u255-m.png */,
@@ -409,9 +415,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF87DEF1C142C3900D3F4FB /* u255-m.png in Resources */,
+				2B0D47C81C3A89EE0076F425 /* Menu-52@2x.png in Resources */,
 				2B059A9F1C01F1F900770818 /* LaunchScreen.storyboard in Resources */,
-				2BF87DF11C142CD000D3F4FB /* universmotri.png in Resources */,
+				2BF87DF11C142CD000D3F4FB /* universmotri@2x.png in Resources */,
 				2B059A9C1C01F1F900770818 /* Assets.xcassets in Resources */,
+				2B0D47C61C3A89B50076F425 /* Menu-50@2x.png in Resources */,
 				2BF87DED1C14227600D3F4FB /* icon-menu@2x.png in Resources */,
 				2B059A9A1C01F1F900770818 /* Main.storyboard in Resources */,
 				2BF87DEC1C14227600D3F4FB /* icon-menu.png in Resources */,

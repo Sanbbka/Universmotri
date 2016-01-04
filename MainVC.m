@@ -58,7 +58,7 @@
     frame.origin = (CGPoint){0, 0};
     frame.size   = (CGSize){30, 25};
     button.frame = frame;
-    [button setImage:[UIImage imageNamed:@"icon-menu"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"Menu-52"] forState:UIControlStateNormal];
 }
 
 - (CGFloat)leftMenuWidth

@@ -61,6 +61,7 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [_streamWebView loadRequest:urlRequest];
+    _streamWebView.scrollView.scrollEnabled = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
