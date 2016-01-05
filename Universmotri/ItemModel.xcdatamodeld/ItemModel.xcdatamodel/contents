@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
-    <entity name="Item" syncable="YES"/>
+    <entity name="DownloadItems" representedClassName="DownloadItems" syncable="YES">
+        <attribute name="cultureNewsPage" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="mainNewsPage" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="rectoratNewsPage" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="scienceNewsPage" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="detailFullText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detailItemLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detailYoutubeLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="itemLinkImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemTittle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uidNews" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="DownloadItems" positionX="-54" positionY="45" width="128" height="105"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

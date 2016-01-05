@@ -9,6 +9,9 @@
 #import "MainVC.h"
 #import "KFUConstants.h"
 
+#import "NetworkHelper.h"
+#import "DBMail.h"
+
 @interface MainVC ()
 {
     UIWebView *view;
@@ -21,7 +24,14 @@
     [super viewDidLoad];
     
 
-
+    [[DBMail sharedInstance] initWithCompletionBlock:^(BOOL success) {
+    
+        
+        [NetworkHelper getNewsForType:MainNews complete:^(NSError *err) {
+            
+        }];
+    }];
+    
 }
 
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KFUConstants.h"
 
 @interface NewsTableViewController : UITableViewController
+
+@property(nonatomic, assign) NewsID uidNews;
 
 @end

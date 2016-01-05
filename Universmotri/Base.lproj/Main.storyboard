@@ -291,7 +291,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="CN9-Kc-jt7" customClass="NewsTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="90" id="CN9-Kc-jt7" customClass="NewsTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CN9-Kc-jt7" id="TDa-v4-v35">
@@ -334,6 +334,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Главное" id="PIH-hc-6ar"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="HpL-Ci-PLC" id="JeS-eW-198"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBF-Pn-yyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -713,6 +716,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="universmotri.png" width="250" height="150"/>
+        <image name="universmotri.png" width="125" height="75"/>
     </resources>
 </document>
