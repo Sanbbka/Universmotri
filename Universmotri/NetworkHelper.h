@@ -12,5 +12,6 @@
 @interface NetworkHelper : NSObject
 
 + (void)getNewsForType:(NewsID )uidNews complete:(void(^)(NSError *err))complete;
++(void)downloadAllImages:(NewsID )uidNews;
 
 @end

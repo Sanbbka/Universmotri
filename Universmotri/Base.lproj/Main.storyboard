@@ -305,18 +305,18 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vFu-ww-W6W">
-                                            <rect key="frame" x="119" y="8" width="193" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oXe-H4-aCV">
                                             <rect key="frame" x="8" y="8.5" width="103" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vFu-ww-W6W">
+                                            <rect key="frame" x="119" y="10" width="193" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -561,13 +561,13 @@
         <!--Культура-->
         <scene sceneID="ta9-os-fBY">
             <objects>
-                <tableViewController id="eJg-18-ouD" sceneMemberID="viewController">
+                <tableViewController id="eJg-18-ouD" customClass="NewsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="xvK-Xc-qAq">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="79u-b0-xfK">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="90" id="79u-b0-xfK" customClass="NewsTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="79u-b0-xfK" id="8DO-OT-Vyg">
@@ -596,6 +596,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="timeLabel" destination="DTb-Zx-RqP" id="nHn-t5-lxL"/>
+                                    <outlet property="tittleImage" destination="WXz-et-eJL" id="rVT-Du-eLu"/>
+                                    <outlet property="tittleLabel" destination="h2g-Vq-xXB" id="HVJ-9b-OU2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -604,7 +609,10 @@
                             <outlet property="delegate" destination="eJg-18-ouD" id="0os-BB-rQh"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Культура" id="8eB-hD-xYW"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Культура" id="8eB-hD-xYW"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="xvK-Xc-qAq" id="TCM-Qh-bS1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBF-Gl-h2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,13 +621,13 @@
         <!--Ректорат-->
         <scene sceneID="9fU-eu-cCM">
             <objects>
-                <tableViewController id="4r9-hZ-9aw" sceneMemberID="viewController">
+                <tableViewController id="4r9-hZ-9aw" customClass="NewsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="HDE-LU-kHM">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="mUW-ow-XcZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="90" id="mUW-ow-XcZ" customClass="NewsTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUW-ow-XcZ" id="p5c-iN-XjH">
@@ -648,6 +656,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="timeLabel" destination="iZL-OW-qG1" id="L9B-ED-lML"/>
+                                    <outlet property="tittleImage" destination="Gte-zi-3dy" id="tbp-fM-Uia"/>
+                                    <outlet property="tittleLabel" destination="axk-Dg-e4h" id="bGx-82-obl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -656,7 +669,10 @@
                             <outlet property="delegate" destination="4r9-hZ-9aw" id="UU5-sk-PnC"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Ректорат" id="dXB-Nb-g09"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Ректорат" id="dXB-Nb-g09"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="HDE-LU-kHM" id="XUn-oR-tSx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bK-dy-BGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -665,13 +681,13 @@
         <!--Наука-->
         <scene sceneID="Rmm-Gq-Uv7">
             <objects>
-                <tableViewController id="GWZ-pj-WXg" sceneMemberID="viewController">
+                <tableViewController id="GWZ-pj-WXg" customClass="NewsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="2xi-cG-Xmf">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="rZa-X9-VoR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="90" id="rZa-X9-VoR" customClass="NewsTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZa-X9-VoR" id="oOd-xw-52a">
@@ -700,6 +716,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="timeLabel" destination="5co-fb-21m" id="0dM-Ht-eNU"/>
+                                    <outlet property="tittleImage" destination="9gT-bv-yc8" id="Ptp-HE-JEk"/>
+                                    <outlet property="tittleLabel" destination="vVd-4g-ThY" id="9X1-X6-qaD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -708,7 +729,10 @@
                             <outlet property="delegate" destination="GWZ-pj-WXg" id="ApB-Ts-uVN"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Наука" id="e9t-SE-ldy"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Наука" id="e9t-SE-ldy"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="2xi-cG-Xmf" id="ija-Li-bOc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3k6-Hj-frg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

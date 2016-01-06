@@ -61,63 +61,97 @@
                 break;
         }
         
+        NSError *error;
+        
         NSString *urlNews = [NSString stringWithFormat:@"%@Page-%i-30.html", downLink, (int)pageDownl];
     
-        NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlNews] encoding:NSUTF8StringEncoding error:nil];
-        HTMLDocument *document = [HTMLDocument documentWithString:str];
+        NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlNews] encoding:NSUTF8StringEncoding error:&error];
         
-        NSArray *newsArr = [document nodesMatchingSelector:@".catItemBody"];
-        
-        for (HTMLElement *elem in newsArr) {
+        if (!error) {
             
-            NSArray *arr = [elem nodesMatchingSelector:@".catItemImage"];
-            HTMLElement *itemImage = [arr firstObject];
+            HTMLDocument *document = [HTMLDocument documentWithString:str];
             
-            Item *item;
-
-            NSDictionary *dict  =  [(HTMLElement *)[itemImage childAtIndex:1] attributes];
-            NSDictionary *dict2 =  [(HTMLElement *)[[itemImage childAtIndex:1] childAtIndex:1] attributes];
+            NSArray *newsArr = [document nodesMatchingSelector:@".catItemBody"];
             
-            NSString *hrefDetail    =  [dict  objectForKey:@"href"];
-            NSString *title         =  [dict  objectForKey:@"title"];
+            for (HTMLElement *elem in newsArr) {
+                
+                NSArray *arr = [elem nodesMatchingSelector:@".catItemImage"];
+                HTMLElement *itemImage = [arr firstObject];
+                
+                Item *item;
+                
+                NSDictionary *dict  =  [(HTMLElement *)[itemImage childAtIndex:1] attributes];
+                NSDictionary *dict2 =  [(HTMLElement *)[[itemImage childAtIndex:1] childAtIndex:1] attributes];
+                
+                NSString *hrefDetail    =  [dict  objectForKey:@"href"];
+                NSString *title         =  [dict  objectForKey:@"title"];
+                
+                NSString *imgLink       =  [dict2 objectForKey:@"src"];
+                NSString *dateCreated   = [(HTMLTextNode *)[[[elem nodesMatchingSelector:@".catItemDateCreated"] firstObject] childAtIndex:0] textContent];
+                
+                NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:context];
+                item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+                
+                [item setItemLinkImage:imgLink];
+                [item setItemTime:dateCreated];
+                [item setItemTittle:title];
+                [item setDetailItemLink:hrefDetail];
+                [item setUidNews:uidNews];
+                
+                [context insertObject:item];
+                [DBMail saveContext:context];
+            }
             
-            NSString *imgLink       =  [dict2 objectForKey:@"src"];
-            NSString *dateCreated   = [(HTMLTextNode *)[[[elem nodesMatchingSelector:@".catItemDateCreated"] firstObject] childAtIndex:0] textContent];
-            
-            NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:context];
-            item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
-
-            [item setItemLinkImage:imgLink];
-            [item setItemTime:dateCreated];
-            [item setItemTittle:title];
-            [item setDetailItemLink:hrefDetail];
-            [item setUidNews:uidNews];
-            
-            [context insertObject:item];
+            switch (uidNews) {
+                case MainNews:
+                    dbPageInfo.mainNewsPage += 1;
+                    break;
+                case RectoratNews:
+                    dbPageInfo.rectoratNewsPage += 1;
+                    break;
+                case CultureNews:
+                    dbPageInfo.cultureNewsPage += 1;
+                    break;
+                case ScienceNews:
+                    dbPageInfo.scienceNewsPage += 1;
+                    break;
+                default:
+                    break;
+            }
             [DBMail saveContext:context];
+        }
+        
+        complete(error);
+    }];
+}
+
++(NSData *)getImageNews:(NSURL *)imgLinkAppend {
+    
+    NSError *err = nil;
+    NSData *data = [NSData dataWithContentsOfURL:imgLinkAppend options:NSDataReadingUncached error:&err];
+    
+    if (err) {
+        NSLog(@"\n\n!!!!!!!!!!!!!!\n%@", err);
+        return nil;
+    } else return data;
+}
+
++(void)downloadAllImages:(NewsID )uidNews {
+    
+    NSManagedObjectContext *moc = [DBMail mocPerThread];
+    [moc performBlock:^{
+        NSArray *arrNews = [DBMail objectWithEntity:@"Item" param:@{@"uidNews" : [NSNumber numberWithInt:uidNews]} sort:nil offset:0 limit:0 MOC:moc];
+        for (Item *itemNews in arrNews) {
             
-            NSLog(@"%@", itemImage);
+            if (!itemNews.itemImage) {
+                
+                [moc performBlock:^{
+                    NSURL *url = [NSURL URLWithString:[MainKFU stringByAppendingString:itemNews.itemLinkImage]];
+                    [itemNews setItemImage:[self getImageNews:url]];
+                    [DBMail saveContext:moc];
+                }];
+            }
         }
-        
-        switch (uidNews) {
-            case MainNews:
-                dbPageInfo.mainNewsPage += 1;
-                break;
-            case RectoratNews:
-                dbPageInfo.rectoratNewsPage += 1;
-                break;
-            case CultureNews:
-                dbPageInfo.cultureNewsPage += 1;
-                break;
-            case ScienceNews:
-                dbPageInfo.scienceNewsPage += 1;
-                break;
-            default:
-                break;
-        }
-        
-        NSString *schedule = [document textContent];
-        
     }];
 }
 

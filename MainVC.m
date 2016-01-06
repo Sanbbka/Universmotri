@@ -24,13 +24,7 @@
     [super viewDidLoad];
     
 
-    [[DBMail sharedInstance] initWithCompletionBlock:^(BOOL success) {
-    
-        
-        [NetworkHelper getNewsForType:MainNews complete:^(NSError *err) {
-            
-        }];
-    }];
+
     
 }
 
