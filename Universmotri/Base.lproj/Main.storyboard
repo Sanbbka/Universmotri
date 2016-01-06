@@ -280,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdP-i3-qqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1651" y="-367"/>
+            <point key="canvasLocation" x="1693" y="-367"/>
         </scene>
         <!--Главное-->
         <scene sceneID="a3H-iD-vpx">
@@ -382,7 +382,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWX-Dt-vCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="908"/>
+            <point key="canvasLocation" x="46" y="930"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="a7l-aw-0U7">
@@ -410,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1U-O7-Cxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="902"/>
+            <point key="canvasLocation" x="437" y="922"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rji-9e-R4F">
@@ -431,7 +431,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Awr-xs-IGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1307" y="979"/>
+            <point key="canvasLocation" x="1299" y="930"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mwL-8V-ugf">
@@ -722,7 +722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4X-zT-I6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345" y="2956"/>
+            <point key="canvasLocation" x="2377" y="3080"/>
         </scene>
         <!--Наука-->
         <scene sceneID="Rmm-Gq-Uv7">
@@ -737,25 +737,25 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZa-X9-VoR" id="oOd-xw-52a">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вторник, 24 Март 2015 18:19" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5co-fb-21m">
-                                            <rect key="frame" x="119" y="60" width="193" height="21"/>
+                                            <rect key="frame" x="119" y="60" width="160" height="21"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vVd-4g-ThY">
-                                            <rect key="frame" x="119" y="8" width="193" height="44"/>
+                                            <rect key="frame" x="106.5" y="8" width="172.5" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9gT-bv-yc8">
-                                            <rect key="frame" x="8" y="8.5" width="103" height="73.5"/>
+                                            <rect key="frame" x="8" y="8.5" width="92" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
@@ -790,6 +790,6 @@
         <image name="universmotri.png" width="125" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oct-ib-Rby"/>
+        <segue reference="Tkk-dk-BeC"/>
     </inferredMetricsTieBreakers>
 </document>

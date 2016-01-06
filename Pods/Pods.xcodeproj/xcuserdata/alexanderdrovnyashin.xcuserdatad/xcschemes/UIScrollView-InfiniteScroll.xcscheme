@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '347B5259D24F4B20E56AA6D9'
-               BlueprintName = 'Pods'
+               BlueprintIdentifier = '5A41CBDB2BB61A41DA7CB925'
+               BlueprintName = 'UIScrollView-InfiniteScroll'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods.a'>
+               BuildableName = 'libUIScrollView-InfiniteScroll.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

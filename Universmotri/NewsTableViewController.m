@@ -13,6 +13,7 @@
 #import "NewsTableViewCell.h"
 #import "NetworkHelper.h"
 #import "DetailViewController.h"
+#import <UIScrollView+InfiniteScroll.h>
 
 @interface NewsTableViewController()<NSFetchedResultsControllerDelegate>
 
@@ -34,6 +35,23 @@ NSString *reuseIdent2;
     reuseIdent2 = @"newsCell";
     
     self.uidNews = self.tabBarItem.tag;
+    
+    self.newsTableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleGray;
+    
+    NSInteger const tagN = (int)self.tabBarItem.tag;
+    __weak typeof(self) welf = self;
+    
+    [self.newsTableView addInfiniteScrollWithHandler:^(UITableView* tableView) {
+        
+        [NetworkHelper getNewsForType:tagN complete:^(NSError *err) {
+            
+            [NetworkHelper downloadAllImages:welf.uidNews];
+            [welf updateTable];
+            NSLog(@"====>%@", err);
+            [tableView reloadData];
+            [tableView finishInfiniteScroll];
+        }];
+    }];
     
     [[DBMail sharedInstance] initWithCompletionBlock:^(BOOL success) {
         
@@ -203,7 +221,7 @@ NSString *reuseIdent2;
     switch(type)
     {
         case NSFetchedResultsChangeInsert:
-            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationBottom];
             break;
         case NSFetchedResultsChangeDelete:
             [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
