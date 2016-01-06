@@ -22,10 +22,7 @@
 		2B0D47D31C3A8FA10076F425 /* DownloadItems+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47CE1C3A8FA10076F425 /* DownloadItems+CoreDataProperties.m */; };
 		2B0D47D41C3A8FA10076F425 /* DownloadItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47D01C3A8FA10076F425 /* DownloadItems.m */; };
 		2B0D47D71C3A91910076F425 /* DBMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47D61C3A91910076F425 /* DBMail.m */; };
-		2B0D47E11C3A91DD0076F425 /* BGNetAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47DA1C3A91DD0076F425 /* BGNetAPI.m */; };
-		2B0D47E21C3A91DD0076F425 /* BGProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47DC1C3A91DD0076F425 /* BGProgress.m */; };
 		2B0D47E31C3A91DD0076F425 /* BGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47DE1C3A91DD0076F425 /* BGTools.m */; };
-		2B0D47E41C3A91DD0076F425 /* BGTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47E01C3A91DD0076F425 /* BGTouchView.m */; };
 		2B0D47E81C3BF4730076F425 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47E71C3BF4730076F425 /* NetworkHelper.m */; };
 		2B3A348F1C3D5BE000645F8F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A348E1C3D5BE000645F8F /* DetailViewController.m */; };
 		2B3A34941C3D756200645F8F /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A34911C3D756200645F8F /* Item+CoreDataProperties.m */; };
@@ -92,14 +89,8 @@
 		2B0D47D01C3A8FA10076F425 /* DownloadItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadItems.m; sourceTree = "<group>"; };
 		2B0D47D51C3A91910076F425 /* DBMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMail.h; sourceTree = "<group>"; };
 		2B0D47D61C3A91910076F425 /* DBMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMail.m; sourceTree = "<group>"; };
-		2B0D47D91C3A91DD0076F425 /* BGNetAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGNetAPI.h; sourceTree = "<group>"; };
-		2B0D47DA1C3A91DD0076F425 /* BGNetAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGNetAPI.m; sourceTree = "<group>"; };
-		2B0D47DB1C3A91DD0076F425 /* BGProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGProgress.h; sourceTree = "<group>"; };
-		2B0D47DC1C3A91DD0076F425 /* BGProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGProgress.m; sourceTree = "<group>"; };
 		2B0D47DD1C3A91DD0076F425 /* BGTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTools.h; sourceTree = "<group>"; };
 		2B0D47DE1C3A91DD0076F425 /* BGTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTools.m; sourceTree = "<group>"; };
-		2B0D47DF1C3A91DD0076F425 /* BGTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTouchView.h; sourceTree = "<group>"; };
-		2B0D47E01C3A91DD0076F425 /* BGTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTouchView.m; sourceTree = "<group>"; };
 		2B0D47E61C3BF4730076F425 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		2B0D47E71C3BF4730076F425 /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		2B3A348D1C3D5BE000645F8F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -249,14 +240,8 @@
 		2B0D47D81C3A91C80076F425 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2B0D47D91C3A91DD0076F425 /* BGNetAPI.h */,
-				2B0D47DA1C3A91DD0076F425 /* BGNetAPI.m */,
-				2B0D47DB1C3A91DD0076F425 /* BGProgress.h */,
-				2B0D47DC1C3A91DD0076F425 /* BGProgress.m */,
 				2B0D47DD1C3A91DD0076F425 /* BGTools.h */,
 				2B0D47DE1C3A91DD0076F425 /* BGTools.m */,
-				2B0D47DF1C3A91DD0076F425 /* BGTouchView.h */,
-				2B0D47E01C3A91DD0076F425 /* BGTouchView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -573,7 +558,6 @@
 				2B0D47D31C3A8FA10076F425 /* DownloadItems+CoreDataProperties.m in Sources */,
 				2B0D47BE1C3A7AA60076F425 /* NewsTableViewController.m in Sources */,
 				2BF87DE01C14192000D3F4FB /* AMSlideMenuContentSegue.m in Sources */,
-				2B0D47E11C3A91DD0076F425 /* BGNetAPI.m in Sources */,
 				2B3A348F1C3D5BE000645F8F /* DetailViewController.m in Sources */,
 				2B0D47E31C3A91DD0076F425 /* BGTools.m in Sources */,
 				2BF87DE91C14197D00D3F4FB /* MainVC.m in Sources */,
@@ -585,12 +569,10 @@
 				2BF87DE31C14192000D3F4FB /* AMSlideMenuMainViewController.m in Sources */,
 				2BF87DE41C14192000D3F4FB /* AMSlideMenuRightMenuSegue.m in Sources */,
 				2BF31A1F1C14376A00FD4EFE /* KFUStreamViewController.m in Sources */,
-				2B0D47E21C3A91DD0076F425 /* BGProgress.m in Sources */,
 				2B0D47C21C3A7FA80076F425 /* ItemModel.xcdatamodeld in Sources */,
 				2B0D47BB1C3A79A90076F425 /* NewsTableViewCell.m in Sources */,
 				2B0D47D41C3A8FA10076F425 /* DownloadItems.m in Sources */,
 				2B059A911C01F1F900770818 /* main.m in Sources */,
-				2B0D47E41C3A91DD0076F425 /* BGTouchView.m in Sources */,
 				2B0D47E81C3BF4730076F425 /* NetworkHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
