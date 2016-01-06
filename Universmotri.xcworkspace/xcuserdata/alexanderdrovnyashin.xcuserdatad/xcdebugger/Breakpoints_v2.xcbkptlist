@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Universmotri/NewsTableViewController.m"
-            timestampString = "473772937.005154"
+            timestampString = "473781963.612143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-updateSort"
             landmarkType = "5">
          </BreakpointContent>

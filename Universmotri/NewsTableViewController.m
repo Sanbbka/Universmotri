@@ -132,6 +132,8 @@ NSString *reuseIdent2;
         [[(NewsTableViewCell *)cell2 tittleImage] setImage:[UIImage imageWithData:item.itemImage]];
     } else {
         
+        UIImage *defaultImage = [UIImage imageNamed:@"universmotri"];
+        [[(NewsTableViewCell *)cell2 tittleImage] setImage:defaultImage];
         //default
     }
 
