@@ -12,13 +12,15 @@
 #import "DownloadItems.h"
 #import "NewsTableViewCell.h"
 #import "NetworkHelper.h"
+#import "DetailViewController.h"
 
 @interface NewsTableViewController()<NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *newsTableView;
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, strong) NSFetchedResultsController    * fetchedResultsController;
+@property (nonatomic, strong) NSManagedObjectContext        * managedObjectContext;
+@property (nonatomic, assign) NSInteger                       newsUID;
 
 @end
 
@@ -116,7 +118,10 @@ NSString *reuseIdent2;
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    Item *item = [_fetchedResultsController objectAtIndexPath:indexPath];
+    self.newsUID = item.newsUid;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -213,6 +218,21 @@ NSString *reuseIdent2;
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.newsTableView endUpdates];
+}
+
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    DetailViewController *contr = [segue destinationViewController];
+    
+    
+     Item *item = [_fetchedResultsController objectAtIndexPath:self.newsTableView.indexPathForSelectedRow];
+    self.newsUID = item.newsUid;
+    [contr setNewsID:self.newsUID];
 }
 
 @end

@@ -73,6 +73,12 @@
             
             NSArray *newsArr = [document nodesMatchingSelector:@".catItemBody"];
             
+            NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+            NSInteger uid;
+            if (![def integerForKey:@"uid"]) {
+                uid = 0;
+            } else uid = [def integerForKey:@"uid"];
+            
             for (HTMLElement *elem in newsArr) {
                 
                 NSArray *arr = [elem nodesMatchingSelector:@".catItemImage"];
@@ -97,10 +103,14 @@
                 [item setItemTittle:title];
                 [item setDetailItemLink:hrefDetail];
                 [item setUidNews:uidNews];
-                
+                [item setNewsUid:uid];
+
                 [context insertObject:item];
                 [DBMail saveContext:context];
+                uid++;
             }
+            
+            [def setInteger:uid forKey:@"uid"];
             
             switch (uidNews) {
                 case MainNews:
@@ -125,7 +135,7 @@
     }];
 }
 
-+(NSData *)getImageNews:(NSURL *)imgLinkAppend {
++ (NSData *)getImageNews:(NSURL *)imgLinkAppend {
     
     NSError *err = nil;
     NSData *data = [NSData dataWithContentsOfURL:imgLinkAppend options:NSDataReadingUncached error:&err];
@@ -136,7 +146,7 @@
     } else return data;
 }
 
-+(void)downloadAllImages:(NewsID )uidNews {
++ (void)downloadAllImages:(NewsID )uidNews {
     
     NSManagedObjectContext *moc = [DBMail mocPerThread];
     [moc performBlock:^{
@@ -153,6 +163,27 @@
             }
         }
     }];
+}
+
++ (void)getDetailNewsByDetailHref:(NSString *)detailUrl complete:(void(^)(NSError *err, NSString *fullText, NSString *youtubeLink))complete {
+    
+    NSError *error;
+    NSString *urlDetailNews = [NSString stringWithFormat:@"%@%@", MainKFU, detailUrl];
+    
+    NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlDetailNews] encoding:NSUTF8StringEncoding error:&error];
+    
+    if (!error) {
+        
+        HTMLDocument *document = [HTMLDocument documentWithString:str];
+        
+        NSArray *newsArr = [document nodesMatchingSelector:@".itemFullText"];
+
+        NSString *fullText = [(HTMLElement *)newsArr.firstObject textContent];
+        NSString *youtubeLink = [[(HTMLElement *)[[[(HTMLElement *)[[document nodesMatchingSelector:@".avPlayerWrapper"] objectAtIndex:0] childAtIndex:1] childAtIndex:1] childAtIndex:1] attributes] objectForKey:@"src"];
+        complete(error, fullText, youtubeLink);
+    } else complete(error, nil, nil);
+    
+    
 }
 
 @end

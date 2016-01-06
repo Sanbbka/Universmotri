@@ -27,8 +27,9 @@
 		2B0D47E31C3A91DD0076F425 /* BGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47DE1C3A91DD0076F425 /* BGTools.m */; };
 		2B0D47E41C3A91DD0076F425 /* BGTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47E01C3A91DD0076F425 /* BGTouchView.m */; };
 		2B0D47E81C3BF4730076F425 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47E71C3BF4730076F425 /* NetworkHelper.m */; };
-		2B4D8CF91C3C82130030CBBA /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D8CF61C3C82130030CBBA /* Item+CoreDataProperties.m */; };
-		2B4D8CFA1C3C82130030CBBA /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D8CF81C3C82130030CBBA /* Item.m */; };
+		2B3A348F1C3D5BE000645F8F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A348E1C3D5BE000645F8F /* DetailViewController.m */; };
+		2B3A34941C3D756200645F8F /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A34911C3D756200645F8F /* Item+CoreDataProperties.m */; };
+		2B3A34951C3D756200645F8F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A34931C3D756200645F8F /* Item.m */; };
 		2BF31A1F1C14376A00FD4EFE /* KFUStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */; };
 		2BF87DE01C14192000D3F4FB /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF87DD21C14192000D3F4FB /* AMSlideMenuContentSegue.m */; };
 		2BF87DE11C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF87DD41C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m */; };
@@ -101,10 +102,12 @@
 		2B0D47E01C3A91DD0076F425 /* BGTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTouchView.m; sourceTree = "<group>"; };
 		2B0D47E61C3BF4730076F425 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		2B0D47E71C3BF4730076F425 /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
-		2B4D8CF51C3C82130030CBBA /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
-		2B4D8CF61C3C82130030CBBA /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
-		2B4D8CF71C3C82130030CBBA /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		2B4D8CF81C3C82130030CBBA /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		2B3A348D1C3D5BE000645F8F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2B3A348E1C3D5BE000645F8F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2B3A34901C3D756200645F8F /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2B3A34911C3D756200645F8F /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2B3A34921C3D756200645F8F /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		2B3A34931C3D756200645F8F /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		2BF31A1D1C14376A00FD4EFE /* KFUStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUStreamViewController.h; sourceTree = "<group>"; };
 		2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUStreamViewController.m; sourceTree = "<group>"; };
 		2BF87DD11C14192000D3F4FB /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
@@ -231,10 +234,10 @@
 				2B0D47D51C3A91910076F425 /* DBMail.h */,
 				2B0D47D61C3A91910076F425 /* DBMail.m */,
 				2B0D47C01C3A7FA80076F425 /* ItemModel.xcdatamodeld */,
-				2B4D8CF51C3C82130030CBBA /* Item+CoreDataProperties.h */,
-				2B4D8CF61C3C82130030CBBA /* Item+CoreDataProperties.m */,
-				2B4D8CF71C3C82130030CBBA /* Item.h */,
-				2B4D8CF81C3C82130030CBBA /* Item.m */,
+				2B3A34901C3D756200645F8F /* Item+CoreDataProperties.h */,
+				2B3A34911C3D756200645F8F /* Item+CoreDataProperties.m */,
+				2B3A34921C3D756200645F8F /* Item.h */,
+				2B3A34931C3D756200645F8F /* Item.m */,
 				2B0D47CD1C3A8FA10076F425 /* DownloadItems+CoreDataProperties.h */,
 				2B0D47CE1C3A8FA10076F425 /* DownloadItems+CoreDataProperties.m */,
 				2B0D47CF1C3A8FA10076F425 /* DownloadItems.h */,
@@ -340,6 +343,8 @@
 				2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */,
 				2B0D47BC1C3A7AA60076F425 /* NewsTableViewController.h */,
 				2B0D47BD1C3A7AA60076F425 /* NewsTableViewController.m */,
+				2B3A348D1C3D5BE000645F8F /* DetailViewController.h */,
+				2B3A348E1C3D5BE000645F8F /* DetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -561,20 +566,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3A34951C3D756200645F8F /* Item.m in Sources */,
 				2B0D47D71C3A91910076F425 /* DBMail.m in Sources */,
 				2BF87DE11C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				2BF87DE51C14192000D3F4FB /* AMSlideMenuRightTableViewController.m in Sources */,
 				2B0D47D31C3A8FA10076F425 /* DownloadItems+CoreDataProperties.m in Sources */,
 				2B0D47BE1C3A7AA60076F425 /* NewsTableViewController.m in Sources */,
-				2B4D8CFA1C3C82130030CBBA /* Item.m in Sources */,
 				2BF87DE01C14192000D3F4FB /* AMSlideMenuContentSegue.m in Sources */,
-				2B4D8CF91C3C82130030CBBA /* Item+CoreDataProperties.m in Sources */,
 				2B0D47E11C3A91DD0076F425 /* BGNetAPI.m in Sources */,
+				2B3A348F1C3D5BE000645F8F /* DetailViewController.m in Sources */,
 				2B0D47E31C3A91DD0076F425 /* BGTools.m in Sources */,
 				2BF87DE91C14197D00D3F4FB /* MainVC.m in Sources */,
 				2BF87DE61C14192000D3F4FB /* UIViewController+AMSlideMenu.m in Sources */,
 				2BF87DE21C14192000D3F4FB /* AMSlideMenuLeftTableViewController.m in Sources */,
 				2B059A941C01F1F900770818 /* AppDelegate.m in Sources */,
+				2B3A34941C3D756200645F8F /* Item+CoreDataProperties.m in Sources */,
 				2BFEF9101C3962850069EB88 /* KFUSettings.m in Sources */,
 				2BF87DE31C14192000D3F4FB /* AMSlideMenuMainViewController.m in Sources */,
 				2BF87DE41C14192000D3F4FB /* AMSlideMenuRightMenuSegue.m in Sources */,

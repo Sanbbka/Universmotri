@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *itemTime;
 @property (nullable, nonatomic, retain) NSString *itemTittle;
 @property (nonatomic) int16_t uidNews;
+@property (nonatomic) int16_t newsUid;
 
 @end
 

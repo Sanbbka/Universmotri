@@ -21,5 +21,6 @@
 @dynamic itemTime;
 @dynamic itemTittle;
 @dynamic uidNews;
+@dynamic newsUid;
 
 @end

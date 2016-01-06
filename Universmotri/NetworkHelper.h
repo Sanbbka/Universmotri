@@ -12,6 +12,6 @@
 @interface NetworkHelper : NSObject
 
 + (void)getNewsForType:(NewsID )uidNews complete:(void(^)(NSError *err))complete;
-+(void)downloadAllImages:(NewsID )uidNews;
-
++ (void)downloadAllImages:(NewsID )uidNews;
++ (void)getDetailNewsByDetailHref:(NSString *)detailUrl complete:(void(^)(NSError *err, NSString *fullText, NSString *youtubeLink))complete;
 @end

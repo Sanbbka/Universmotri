@@ -14,10 +14,11 @@
         <attribute name="itemLinkImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemTittle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="uidNews" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="newsUid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="uidNews" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
         <element name="DownloadItems" positionX="-54" positionY="45" width="128" height="105"/>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="180"/>
     </elements>
 </model>
