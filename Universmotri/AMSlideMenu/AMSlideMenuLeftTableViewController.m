@@ -120,6 +120,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIView *bgrnd = [[UIView alloc] initWithFrame:[tableView cellForRowAtIndexPath:indexPath].bounds];
+    [bgrnd setBackgroundColor:[UIColor blackColor]];
+    [[tableView cellForRowAtIndexPath:indexPath] setSelectedBackgroundView:bgrnd];
+    
     if ([self.mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
         UINavigationController *navController = [self.mainVC navigationControllerForIndexPathInLeftMenu:indexPath];
         AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:self destination:navController];
@@ -132,6 +136,8 @@
         }
     }
 }
+
+
 
 
 @end

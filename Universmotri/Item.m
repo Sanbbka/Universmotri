@@ -2,7 +2,7 @@
 //  Item.m
 //  Universmotri
 //
-//  Created by Alexander Drovnyashin on 06.01.16.
+//  Created by Alexander Drovnyashin on 07.01.16.
 //  Copyright © 2016 Alexander Drovnyashin. All rights reserved.
 //
 

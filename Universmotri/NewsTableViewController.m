@@ -34,6 +34,11 @@ NSString *reuseIdent2;
     
     reuseIdent2 = @"newsCell";
     
+    [self.newsTableView setTableFooterView:[UIView new]];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(updateTableNews) forControlEvents:UIControlEventValueChanged];
+    
     self.uidNews = self.tabBarItem.tag;
     
     self.newsTableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleGray;
@@ -46,11 +51,9 @@ NSString *reuseIdent2;
         [NetworkHelper getNewsForType:tagN complete:^(NSError *err) {
             
             [NetworkHelper downloadAllImages:welf.uidNews];
-            [welf updateTable];
             NSLog(@"====>%@", err);
-            [tableView reloadData];
-            [tableView finishInfiniteScroll];
         }];
+        [tableView finishInfiniteScroll];
     }];
     
     [[DBMail sharedInstance] initWithCompletionBlock:^(BOOL success) {
@@ -77,6 +80,14 @@ NSString *reuseIdent2;
             }
         }];
         NSLog(@"DB_INIT");
+    }];
+}
+
+- (void)updateTableNews {
+    
+    [NetworkHelper getUpdateFirstPage:self.newsUID complete:^(NSError *err) {
+       
+        [self.refreshControl endRefreshing];
     }];
 }
 
@@ -115,7 +126,7 @@ NSString *reuseIdent2;
     // сортировка
     NSMutableArray *sorts = [NSMutableArray new];
     
-//    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"priority" ascending:YES]];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"priority" ascending:NO]];
     //    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"countMsgs" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)] ];
     [fetchRequest setSortDescriptors:sorts];
     [fetchRequest setFetchBatchSize:20];
@@ -221,7 +232,7 @@ NSString *reuseIdent2;
     switch(type)
     {
         case NSFetchedResultsChangeInsert:
-            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationBottom];
+            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeDelete:
             [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];

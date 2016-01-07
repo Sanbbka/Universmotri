@@ -27,6 +27,8 @@ typedef NS_ENUM(NSInteger, NewsID) {
     ScienceNews
 };
 
+static NSInteger const normalPriority       = 100000;
+
 /*Ссылки на стримы*/
 static NSString const*universmotriSQLLink   = @"http://tv.kpfu.ru/lqcast/index.html";
 static NSString const*universmotriSQMLink   = @"http://tv.kpfu.ru/mqcast/index.html";

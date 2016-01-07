@@ -104,11 +104,13 @@
                 [item setDetailItemLink:hrefDetail];
                 [item setUidNews:uidNews];
                 [item setNewsUid:uid];
+                [item setPriority:normalPriority - uid];
 
                 [context insertObject:item];
-                [DBMail saveContext:context];
+                
                 uid++;
             }
+            [DBMail saveContext:context];
             
             [def setInteger:uid forKey:@"uid"];
             
@@ -156,9 +158,12 @@
             if (!itemNews.itemImage) {
                 
                 [moc performBlock:^{
-                    NSURL *url = [NSURL URLWithString:[MainKFU stringByAppendingString:itemNews.itemLinkImage]];
-                    [itemNews setItemImage:[self getImageNews:url]];
-                    [DBMail saveContext:moc];
+                    if (itemNews.itemLinkImage) {
+                     
+                        NSURL *url = [NSURL URLWithString:[MainKFU stringByAppendingString:itemNews.itemLinkImage]];
+                        [itemNews setItemImage:[self getImageNews:url]];
+                        [DBMail saveContext:moc];
+                    }
                 }];
             }
         }
@@ -183,7 +188,109 @@
         complete(error, fullText, youtubeLink);
     } else complete(error, nil, nil);
     
+}
+
++ (void)getUpdateFirstPage:(NewsID )uidNews complete:(void(^)(NSError *err))complete {
     
+    NSManagedObjectContext *context = [DBMail mocPerThread];
+    [context performBlock:^{
+        NSError *error;
+        NSString const*downLink;
+        
+        switch (uidNews) {
+            case MainNews:
+                downLink  = mainNews;
+
+                break;
+            case RectoratNews:
+                downLink  = rectoratNews;
+
+                break;
+            case CultureNews:
+                downLink  = cultureNews;
+
+                break;
+            case ScienceNews:
+                downLink  = scienceNews;
+
+                break;
+            default:
+                break;
+        }
+
+        
+        NSString *urlNews = [NSString stringWithFormat:@"%@Page-%i-30.html", downLink, 1];
+        
+        NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlNews] encoding:NSUTF8StringEncoding error:&error];
+        
+        if (!error) {
+            
+            NSArray *mainArr = [DBMail objectWithEntity:@"Item" param:@{@"uidNews" : [NSNumber numberWithInt:uidNews]} sort:nil offset:0 limit:0 MOC:context];
+            
+            HTMLDocument *document = [HTMLDocument documentWithString:str];
+            
+            NSArray *newsArr = [document nodesMatchingSelector:@".catItemBody"];
+            
+            NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+            NSInteger uid;
+            if (![def integerForKey:@"uid"]) {
+                uid = 0;
+            } else uid = [def integerForKey:@"uid"];
+            
+            for (HTMLElement *elem in newsArr) {
+                
+                NSArray *arr = [elem nodesMatchingSelector:@".catItemImage"];
+                HTMLElement *itemImage = [arr firstObject];
+                
+                Item *item;
+                
+                NSDictionary *dict  =  [(HTMLElement *)[itemImage childAtIndex:1] attributes];
+                NSDictionary *dict2 =  [(HTMLElement *)[[itemImage childAtIndex:1] childAtIndex:1] attributes];
+                
+                NSString *hrefDetail    =  [dict  objectForKey:@"href"];
+                NSString *title         =  [dict  objectForKey:@"title"];
+                
+                BOOL b = true;
+                
+                for (Item *mainItem in mainArr) {
+                    
+                    if ([mainItem.detailItemLink rangeOfString:hrefDetail].length > 0) {
+                        
+                        b = false;
+                        break;
+                    }
+                }
+                
+                if (!b) {
+                    continue;
+                }
+                
+                NSString *imgLink       =  [dict2 objectForKey:@"src"];
+                NSString *dateCreated   = [(HTMLTextNode *)[[[elem nodesMatchingSelector:@".catItemDateCreated"] firstObject] childAtIndex:0] textContent];
+                
+                NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:context];
+                item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+                
+                [item setItemLinkImage:imgLink];
+                [item setItemTime:dateCreated];
+                [item setItemTittle:title];
+                [item setDetailItemLink:hrefDetail];
+                [item setUidNews:uidNews];
+                [item setNewsUid:uid];
+                [item setPriority:normalPriority + uid];
+                
+                [context insertObject:item];
+                
+                uid++;
+            }
+            [DBMail saveContext:context];
+            
+            [def setInteger:uid forKey:@"uid"];
+            
+        }
+        
+        complete(error);
+    }];
 }
 
 @end

@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.h
 //  Universmotri
 //
-//  Created by Alexander Drovnyashin on 06.01.16.
+//  Created by Alexander Drovnyashin on 07.01.16.
 //  Copyright © 2016 Alexander Drovnyashin. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -22,8 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *itemLinkImage;
 @property (nullable, nonatomic, retain) NSString *itemTime;
 @property (nullable, nonatomic, retain) NSString *itemTittle;
-@property (nonatomic) int16_t uidNews;
 @property (nonatomic) int16_t newsUid;
+@property (nonatomic) int16_t uidNews;
+@property (nonatomic) int64_t priority;
 
 @end
 

@@ -44,6 +44,8 @@
 
     [self KFUStream];
     
+    [self.scheduleTableView setTableFooterView:[UIView new]];
+    
     self.arrProgram = [NSArray new];
     NSString *urlString;
     

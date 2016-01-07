@@ -52,9 +52,7 @@
                     [self.detailWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:item.detailYoutubeLink]]];
                     [self.refreshIndicator stopAnimating];
                 });
-                
-
-                
+                                
             }];
         }
         NSLog(@"%@", arr);

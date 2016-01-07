@@ -28,7 +28,6 @@
     
 }
 
-
 - (NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath {
     
     NSString *identifier;
@@ -43,7 +42,7 @@
             identifier = @"News";
             break;
         case 3:
-            identifier = @"Radio";
+//            identifier = @"Radio";
             break;
         case 4:
             identifier = @"settings";
