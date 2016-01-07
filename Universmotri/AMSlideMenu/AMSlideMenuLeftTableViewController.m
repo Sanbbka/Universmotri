@@ -36,6 +36,10 @@
 {
     AVPlayer *songPlayer;
 
+    __weak IBOutlet UITableViewCell *customCellSetting;
+    __weak IBOutlet UITableViewCell *customCellNews;
+    __weak IBOutlet UITableViewCell *customCellKFU;
+    __weak IBOutlet UITableViewCell *customCellUniversmotri;
 }
 @end
 
@@ -101,6 +105,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIView *bgrnd = [[UIView alloc] initWithFrame:customCellKFU.bounds];
+    [bgrnd                  setBackgroundColor:[UIColor blackColor]];
+    [customCellKFU          setSelectedBackgroundView:bgrnd];
+    [customCellNews         setSelectedBackgroundView:bgrnd];
+    [customCellSetting      setSelectedBackgroundView:bgrnd];
+    [customCellUniversmotri setSelectedBackgroundView:bgrnd];
 }
 
 - (void)openContentNavigationController:(UINavigationController *)nvc

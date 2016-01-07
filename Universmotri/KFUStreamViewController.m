@@ -11,8 +11,8 @@
 
 @interface KFUStreamViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIWebView *streamWebView;
-@property (weak, nonatomic) IBOutlet UITableView *scheduleTableView;
+@property (weak, nonatomic) IBOutlet UIWebView      *streamWebView;
+@property (weak, nonatomic) IBOutlet UITableView    *scheduleTableView;
 
 @property (strong , nonatomic) NSArray *arrProgram;
 
@@ -89,10 +89,29 @@
             break;
     }
     
-    NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlStream] encoding:NSUTF8StringEncoding error:nil];
-    HTMLDocument *document = [HTMLDocument documentWithString:str];
-    NSString *schedule = [document textContent];
-    NSArray *arrSchedule = [schedule componentsSeparatedByString:@"\n"];
+    NSError *err;
+    
+    NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlStream] encoding:NSUTF8StringEncoding error:&err];
+    NSArray *arrSchedule;
+    if (str) {
+        
+        HTMLDocument *document = [HTMLDocument documentWithString:str];
+        NSString *schedule = [document textContent];
+        arrSchedule = [schedule componentsSeparatedByString:@"\n"];
+        
+    }
+    if (err) {
+        
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Ошибка!!!"
+                                                                       message:@"Ошибка сети, повторите запрос позднее."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
     return arrSchedule;
 }
@@ -102,8 +121,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [[UITableViewCell alloc] init];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    [cell setBackgroundColor:[UIColor colorWithRed:54./255. green:57./255. blue:81./255. alpha:1.]];
     
     if (indexPath.row < self.arrProgram.count) {
+        [cell.textLabel setTextColor:[UIColor blackColor]];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
         cell.textLabel.text = self.arrProgram[indexPath.row];
     }
     

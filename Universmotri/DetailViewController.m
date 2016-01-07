@@ -41,23 +41,35 @@
         } else {
             [NetworkHelper getDetailNewsByDetailHref:item.detailItemLink complete:^(NSError *err, NSString *fullText, NSString *youtubeLink) {
                 
-                [item setDetailFullText:fullText];
-                [item setDetailYoutubeLink:youtubeLink];
-                
-                [DBMail saveContext:_moc];
-                
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                   
-                    [self.detailFullTextView setText:item.detailFullText];
-                    [self.detailWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:item.detailYoutubeLink]]];
-                    [self.refreshIndicator stopAnimating];
-                });
-                                
+                if (!err) {
+                 
+                    [item setDetailFullText:fullText];
+                    [item setDetailYoutubeLink:youtubeLink];
+                    
+                    [DBMail saveContext:_moc];
+                    
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        
+                        [self.detailFullTextView setText:item.detailFullText];
+                        [self.detailWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:item.detailYoutubeLink]]];
+                        [self.refreshIndicator stopAnimating];
+                    });
+                } else {
+                    
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Ошибка!!!"
+                                                                                   message:@"Ошибка сети, повторите запрос позднее."
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction * action) {}];
+                    
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
             }];
         }
         NSLog(@"%@", arr);
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning {

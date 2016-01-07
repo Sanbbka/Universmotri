@@ -49,9 +49,11 @@ NSString *reuseIdent2;
     [self.newsTableView addInfiniteScrollWithHandler:^(UITableView* tableView) {
         
         [NetworkHelper getNewsForType:tagN complete:^(NSError *err) {
-            
-            [NetworkHelper downloadAllImages:welf.uidNews];
-            NSLog(@"====>%@", err);
+            if (!err) {
+                
+                [NetworkHelper downloadAllImages:welf.uidNews];
+                NSLog(@"====>%@", err);
+            } else [welf showMessageError];
         }];
         [tableView finishInfiniteScroll];
     }];
@@ -72,10 +74,12 @@ NSString *reuseIdent2;
                 
                 NSLog(@"%i", (int)self.tabBarItem.tag);
                 [NetworkHelper getNewsForType:(int)self.tabBarItem.tag complete:^(NSError *err) {
-                    
-                    [NetworkHelper downloadAllImages:self.uidNews];
-                    [self updateTable];
-                    NSLog(@"====>%@", err);
+                    if (!err) {
+                     
+                        [NetworkHelper downloadAllImages:self.uidNews];
+                        [self updateTable];
+                        NSLog(@"====>%@", err);
+                    } else [self showMessageError];
                 }];
             }
         }];
@@ -83,11 +87,27 @@ NSString *reuseIdent2;
     }];
 }
 
+- (void)showMessageError {
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Ошибка!!!"
+                                                                   message:@"Ошибка сети, повторите запрос позднее."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (void)updateTableNews {
     
     [NetworkHelper getUpdateFirstPage:self.newsUID complete:^(NSError *err) {
        
-        [self.refreshControl endRefreshing];
+        if (!err) {
+            [self.refreshControl endRefreshing];
+        } else [self showMessageError];
+        
     }];
 }
 
