@@ -24,7 +24,10 @@
 		2B0D47D71C3A91910076F425 /* DBMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47D61C3A91910076F425 /* DBMail.m */; };
 		2B0D47E31C3A91DD0076F425 /* BGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47DE1C3A91DD0076F425 /* BGTools.m */; };
 		2B0D47E81C3BF4730076F425 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47E71C3BF4730076F425 /* NetworkHelper.m */; };
+		2B142EC61C55187C00EDB1B0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B142EC51C55187C00EDB1B0 /* SettingsViewController.m */; };
 		2B3A348F1C3D5BE000645F8F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A348E1C3D5BE000645F8F /* DetailViewController.m */; };
+		2BCE0C811C58148700B8088C /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE0C801C58148700B8088C /* SettingTableViewController.m */; };
+		2BCE0C841C58176100B8088C /* DetailSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE0C831C58176100B8088C /* DetailSettingTableViewController.m */; };
 		2BEC066D1C3E89050024BDE4 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC066A1C3E89050024BDE4 /* Item+CoreDataProperties.m */; };
 		2BEC066E1C3E89050024BDE4 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC066C1C3E89050024BDE4 /* Item.m */; };
 		2BF31A1F1C14376A00FD4EFE /* KFUStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF31A1E1C14376A00FD4EFE /* KFUStreamViewController.m */; };
@@ -93,8 +96,14 @@
 		2B0D47DE1C3A91DD0076F425 /* BGTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTools.m; sourceTree = "<group>"; };
 		2B0D47E61C3BF4730076F425 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		2B0D47E71C3BF4730076F425 /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		2B142EC41C55187C00EDB1B0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		2B142EC51C55187C00EDB1B0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2B3A348D1C3D5BE000645F8F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		2B3A348E1C3D5BE000645F8F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2BCE0C7F1C58148700B8088C /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		2BCE0C801C58148700B8088C /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		2BCE0C821C58176100B8088C /* DetailSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSettingTableViewController.h; sourceTree = "<group>"; };
+		2BCE0C831C58176100B8088C /* DetailSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSettingTableViewController.m; sourceTree = "<group>"; };
 		2BEC06691C3E89050024BDE4 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
 		2BEC066A1C3E89050024BDE4 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		2BEC066B1C3E89050024BDE4 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
@@ -330,6 +339,12 @@
 				2B0D47BD1C3A7AA60076F425 /* NewsTableViewController.m */,
 				2B3A348D1C3D5BE000645F8F /* DetailViewController.h */,
 				2B3A348E1C3D5BE000645F8F /* DetailViewController.m */,
+				2B142EC41C55187C00EDB1B0 /* SettingsViewController.h */,
+				2B142EC51C55187C00EDB1B0 /* SettingsViewController.m */,
+				2BCE0C7F1C58148700B8088C /* SettingTableViewController.h */,
+				2BCE0C801C58148700B8088C /* SettingTableViewController.m */,
+				2BCE0C821C58176100B8088C /* DetailSettingTableViewController.h */,
+				2BCE0C831C58176100B8088C /* DetailSettingTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -554,12 +569,15 @@
 				2B0D47D71C3A91910076F425 /* DBMail.m in Sources */,
 				2BF87DE11C14192000D3F4FB /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				2BEC066D1C3E89050024BDE4 /* Item+CoreDataProperties.m in Sources */,
+				2B142EC61C55187C00EDB1B0 /* SettingsViewController.m in Sources */,
 				2BF87DE51C14192000D3F4FB /* AMSlideMenuRightTableViewController.m in Sources */,
 				2B0D47D31C3A8FA10076F425 /* DownloadItems+CoreDataProperties.m in Sources */,
 				2B0D47BE1C3A7AA60076F425 /* NewsTableViewController.m in Sources */,
 				2BF87DE01C14192000D3F4FB /* AMSlideMenuContentSegue.m in Sources */,
 				2B3A348F1C3D5BE000645F8F /* DetailViewController.m in Sources */,
+				2BCE0C811C58148700B8088C /* SettingTableViewController.m in Sources */,
 				2B0D47E31C3A91DD0076F425 /* BGTools.m in Sources */,
+				2BCE0C841C58176100B8088C /* DetailSettingTableViewController.m in Sources */,
 				2BF87DE91C14197D00D3F4FB /* MainVC.m in Sources */,
 				2BF87DE61C14192000D3F4FB /* UIViewController+AMSlideMenu.m in Sources */,
 				2BF87DE21C14192000D3F4FB /* AMSlideMenuLeftTableViewController.m in Sources */,

@@ -10,7 +10,7 @@
 #define KFUConstants_h
 
 typedef NS_ENUM(NSInteger, StreamQuality) {
-    StreamQualityLight,
+    StreamQualityLight = 0,
     StreamQualityMedium,
     StreamQualityHight
 };
@@ -39,7 +39,7 @@ static NSString const*KFULink               = @"http://tv.kpfu.ru/epg_kpfu";
 static NSString const*MainKFU               = @"http://tv.kpfu.ru";
 
 /*Ссылки на новости*/
-/*Загрузка происходит постранично "осн ссылка" + "Page-\(n)-30.html" n - нужная страница */
+/*Загрузка происходит постранично "осн ссылка" + "Page-\(n)-30.html", где n - нужная страница */
 static NSString const*mainNews              = @"http://tv.kpfu.ru/index.php/novosti/obzory-novostey/";
 static NSString const*rectoratNews          = @"http://tv.kpfu.ru/index.php/novosti/novosti-rektorata/";
 static NSString const*cultureNews           = @"http://tv.kpfu.ru/index.php/novosti/obschestvo-i-kultura/";
