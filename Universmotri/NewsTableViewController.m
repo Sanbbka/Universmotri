@@ -54,8 +54,11 @@ NSString *reuseIdent2;
                 [NetworkHelper downloadAllImages:welf.uidNews];
                 NSLog(@"====>%@", err);
             } else [welf showMessageError];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [tableView finishInfiniteScroll];
+            });
         }];
-        [tableView finishInfiniteScroll];
     }];
     
     [[DBMail sharedInstance] initWithCompletionBlock:^(BOOL success) {

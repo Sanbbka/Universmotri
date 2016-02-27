@@ -62,7 +62,7 @@
     if (songPlayer) {
         [songPlayer play];
     } else {
-    NSString *urlString = @"http://radio.universmotri.ru:8000";
+    NSString *urlString = @"http://cast.ufmradio.ru:8000/ufm";
     AVPlayer *player = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:urlString]];
     songPlayer = player;
     [[NSNotificationCenter defaultCenter] addObserver:self
