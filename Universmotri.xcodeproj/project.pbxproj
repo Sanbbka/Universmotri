@@ -26,6 +26,10 @@
 		2B0D47E81C3BF4730076F425 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D47E71C3BF4730076F425 /* NetworkHelper.m */; };
 		2B142EC61C55187C00EDB1B0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B142EC51C55187C00EDB1B0 /* SettingsViewController.m */; };
 		2B3A348F1C3D5BE000645F8F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A348E1C3D5BE000645F8F /* DetailViewController.m */; };
+		2B4DDA4B1C9423F4006C5DDD /* News-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DDA4A1C9423F4006C5DDD /* News-50@2x.png */; };
+		2B4DDA4F1C94251B006C5DDD /* Hot Article-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DDA4C1C94251B006C5DDD /* Hot Article-50@2x.png */; };
+		2B4DDA501C94251B006C5DDD /* Physics-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DDA4D1C94251B006C5DDD /* Physics-50@2x.png */; };
+		2B4DDA511C94251B006C5DDD /* Museum-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DDA4E1C94251B006C5DDD /* Museum-50@2x.png */; };
 		2BCE0C811C58148700B8088C /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE0C801C58148700B8088C /* SettingTableViewController.m */; };
 		2BCE0C841C58176100B8088C /* DetailSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE0C831C58176100B8088C /* DetailSettingTableViewController.m */; };
 		2BEC066D1C3E89050024BDE4 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC066A1C3E89050024BDE4 /* Item+CoreDataProperties.m */; };
@@ -100,6 +104,10 @@
 		2B142EC51C55187C00EDB1B0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2B3A348D1C3D5BE000645F8F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		2B3A348E1C3D5BE000645F8F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2B4DDA4A1C9423F4006C5DDD /* News-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "News-50@2x.png"; sourceTree = "<group>"; };
+		2B4DDA4C1C94251B006C5DDD /* Hot Article-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hot Article-50@2x.png"; sourceTree = "<group>"; };
+		2B4DDA4D1C94251B006C5DDD /* Physics-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Physics-50@2x.png"; sourceTree = "<group>"; };
+		2B4DDA4E1C94251B006C5DDD /* Museum-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Museum-50@2x.png"; sourceTree = "<group>"; };
 		2BCE0C7F1C58148700B8088C /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		2BCE0C801C58148700B8088C /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		2BCE0C821C58176100B8088C /* DetailSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSettingTableViewController.h; sourceTree = "<group>"; };
@@ -352,6 +360,10 @@
 		2BFEF9151C3965AA0069EB88 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2B4DDA4C1C94251B006C5DDD /* Hot Article-50@2x.png */,
+				2B4DDA4D1C94251B006C5DDD /* Physics-50@2x.png */,
+				2B4DDA4E1C94251B006C5DDD /* Museum-50@2x.png */,
+				2B4DDA4A1C9423F4006C5DDD /* News-50@2x.png */,
 				2B0D47C71C3A89EE0076F425 /* Menu-52@2x.png */,
 				2BF87DF01C142CD000D3F4FB /* universmotri@2x.png */,
 				2B0D47C51C3A89B50076F425 /* Menu-50@2x.png */,
@@ -491,9 +503,13 @@
 				2BF87DF11C142CD000D3F4FB /* universmotri@2x.png in Resources */,
 				2B059A9C1C01F1F900770818 /* Assets.xcassets in Resources */,
 				2B0D47C61C3A89B50076F425 /* Menu-50@2x.png in Resources */,
+				2B4DDA511C94251B006C5DDD /* Museum-50@2x.png in Resources */,
 				2BF87DED1C14227600D3F4FB /* icon-menu@2x.png in Resources */,
 				2B059A9A1C01F1F900770818 /* Main.storyboard in Resources */,
 				2BF87DEC1C14227600D3F4FB /* icon-menu.png in Resources */,
+				2B4DDA4B1C9423F4006C5DDD /* News-50@2x.png in Resources */,
+				2B4DDA501C94251B006C5DDD /* Physics-50@2x.png in Resources */,
+				2B4DDA4F1C94251B006C5DDD /* Hot Article-50@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

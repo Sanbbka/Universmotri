@@ -107,7 +107,7 @@
     [super viewDidLoad];
     
     UIView *bgrnd = [[UIView alloc] initWithFrame:customCellKFU.bounds];
-    [bgrnd                  setBackgroundColor:[UIColor blackColor]];
+    [bgrnd                  setBackgroundColor:[UIColor colorWithRed:1. green:200./255 blue:247./255 alpha:1]];
     [customCellKFU          setSelectedBackgroundView:bgrnd];
     [customCellNews         setSelectedBackgroundView:bgrnd];
     [customCellSetting      setSelectedBackgroundView:bgrnd];
@@ -132,7 +132,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIView *bgrnd = [[UIView alloc] initWithFrame:[tableView cellForRowAtIndexPath:indexPath].bounds];
-    [bgrnd setBackgroundColor:[UIColor blackColor]];
+    [bgrnd setBackgroundColor:[UIColor colorWithRed:1. green:200./255 blue:247./255 alpha:1]];
     [[tableView cellForRowAtIndexPath:indexPath] setSelectedBackgroundView:bgrnd];
     
     if ([self.mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
