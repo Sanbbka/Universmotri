@@ -9,7 +9,7 @@
 #import "KFUStreamViewController.h"
 #import <HTMLReader/HTMLReader.h>
 
-@interface KFUStreamViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface KFUStreamViewController () <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView      *streamWebView;
 @property (weak, nonatomic) IBOutlet UITableView    *scheduleTableView;
@@ -62,8 +62,9 @@
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [_streamWebView loadRequest:urlRequest];
-    _streamWebView.scrollView.scrollEnabled = NO;
+    [self.streamWebView loadRequest:urlRequest];
+    self.streamWebView.scrollView.scrollEnabled = NO;
+    self.streamWebView.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -137,5 +138,6 @@
     
     return self.arrProgram.count;
 }
+
 
 @end

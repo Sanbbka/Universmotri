@@ -404,6 +404,7 @@
 				2B059A8A1C01F1F900770818 /* Resources */,
 				A2D06099EC8CF8F7A0A1178C /* Embed Pods Frameworks */,
 				F906311FD93167E2E18C3965 /* Copy Pods Resources */,
+				2B0BC7B61CB2DE8000D5A7BA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -461,6 +462,7 @@
 				TargetAttributes = {
 					2B059A8B1C01F1F900770818 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = UBXCC45PP4;
 					};
 					2B059AA41C01F1F900770818 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -544,6 +546,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		2B0BC7B61CB2DE8000D5A7BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 0d4b3304b7256f98363b3c93ded897e883e8c13d d1f21b719e333c3dd4baf8aff5e0ec973fa72e083368880f37661d40eabfa530";
 		};
 		A2D06099EC8CF8F7A0A1178C /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -747,10 +762,13 @@
 			baseConfigurationReference = 6BB4D83384245498F45295A5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Universmotri/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alx.Universmotri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -759,10 +777,13 @@
 			baseConfigurationReference = 8B721CBBF4A5CD1F9FF367F2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Universmotri/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alx.Universmotri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

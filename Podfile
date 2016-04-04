@@ -5,3 +5,5 @@
 
 pod "HTMLReader"
 pod 'UIScrollView-InfiniteScroll'
+pod 'Fabric'
+pod 'Crashlytics'

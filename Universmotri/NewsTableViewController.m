@@ -78,11 +78,14 @@ NSString *reuseIdent2;
                 NSLog(@"%i", (int)self.tabBarItem.tag);
                 [NetworkHelper getNewsForType:(int)self.tabBarItem.tag complete:^(NSError *err) {
                     if (!err) {
-                     
                         [NetworkHelper downloadAllImages:self.uidNews];
                         [self updateTable];
                         NSLog(@"====>%@", err);
                     } else [self showMessageError];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.refreshControl endRefreshing];
+                    });
                 }];
             }
         }];
