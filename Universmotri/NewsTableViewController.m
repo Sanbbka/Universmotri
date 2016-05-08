@@ -108,7 +108,7 @@ NSString *reuseIdent2;
 
 - (void)updateTableNews {
     
-    [NetworkHelper getUpdateFirstPage:self.newsUID complete:^(NSError *err) {
+    [NetworkHelper getUpdateFirstPage:self.uidNews complete:^(NSError *err) {
         if (err) {
             [self showMessageError];
         }

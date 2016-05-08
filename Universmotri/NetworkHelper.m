@@ -35,7 +35,7 @@
             [DBMail saveContext:context];
         }
         else
-            dbPageInfo = arr[0];
+            dbPageInfo = arr.firstObject;
         
         NSString const*downLink;
         NSInteger  pageDownl;
@@ -74,10 +74,7 @@
             NSArray *newsArr = [document nodesMatchingSelector:@".catItemBody"];
             
             NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-            NSInteger uid;
-            if (![def integerForKey:@"uid"]) {
-                uid = 0;
-            } else uid = [def integerForKey:@"uid"];
+            NSInteger uid = [def integerForKey:@"uid"];
             
             for (HTMLElement *elem in newsArr) {
                 
@@ -232,10 +229,7 @@
             NSArray *newsArr = [document nodesMatchingSelector:@".catItemBody"];
             
             NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-            NSInteger uid;
-            if (![def integerForKey:@"uid"]) {
-                uid = 0;
-            } else uid = [def integerForKey:@"uid"];
+            NSInteger uid = [def integerForKey:@"uid"];
             
             for (HTMLElement *elem in newsArr) {
                 
