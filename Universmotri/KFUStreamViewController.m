@@ -9,13 +9,17 @@
 #import "KFUStreamViewController.h"
 #import <HTMLReader/HTMLReader.h>
 
+@import AVKit;
+@import AVFoundation;
+
 @interface KFUStreamViewController () <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView      *streamWebView;
 @property (weak, nonatomic) IBOutlet UITableView    *scheduleTableView;
 
 @property (strong , nonatomic) NSArray *arrProgram;
-
+@property (weak, nonatomic) IBOutlet UIView *player;
+@property (strong , nonatomic) AVPlayerViewController *playerVC;
 @property (assign, nonatomic) Stream stream;
 
 @end
@@ -25,6 +29,9 @@
 - (void)KFUStream {
     
     self.stream = [self.navigationItem.title rangeOfString:@"KFU"].length > 0 ? StreamKFU : StreamUniversmotri;
+    
+    // ...
+   
 }
 
 -(void)updateInfo {
@@ -54,17 +61,23 @@
             urlString = @"http://cdn.universmotri.ru/live/univer_kfu2/playlist.m3u8";
             break;
         case StreamUniversmotri:
-            urlString = @"http://universmotri.ru/lqcast/index.html";
+            urlString = @"http://cdn.universmotri.ru/live/smil:mbr.smil/playlist.m3u8";
             break;
         default:
             break;
     }
     
+    self.playerVC = [[AVPlayerViewController alloc] init];
+    [self.playerVC.view setFrame: self.player.bounds];  // player's frame must match parent's
+    [self.player addSubview: self.playerVC.view];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.streamWebView loadRequest:urlRequest];
-    self.streamWebView.scrollView.scrollEnabled = NO;
+    self.streamWebView.scrollView.scrollEnabled = YES;
     self.streamWebView.delegate = self;
+    
+    self.playerVC.player = [AVPlayer playerWithURL:url];
+    [self.playerVC.player play];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -139,5 +152,23 @@
     return self.arrProgram.count;
 }
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    NSLog(@"start");
+    
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+ 
+    NSLog(@"start");
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    NSLog(@"stop");
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
+    NSLog(@"stop");
+}
 
 @end
