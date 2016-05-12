@@ -14,7 +14,6 @@
 
 @interface KFUStreamViewController () <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIWebView      *streamWebView;
 @property (weak, nonatomic) IBOutlet UITableView    *scheduleTableView;
 
 @property (strong , nonatomic) NSArray *arrProgram;
@@ -71,20 +70,20 @@
     [self.playerVC.view setFrame: self.player.bounds];  // player's frame must match parent's
     [self.player addSubview: self.playerVC.view];
     NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [self.streamWebView loadRequest:urlRequest];
-    self.streamWebView.scrollView.scrollEnabled = YES;
-    self.streamWebView.delegate = self;
     
     self.playerVC.player = [AVPlayer playerWithURL:url];
-    [self.playerVC.player play];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [self updateInfo];
+    [self.playerVC.player play];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [self.playerVC.player pause];
+}
 
 #pragma mark - online
 - (NSArray *)getSchedule {
